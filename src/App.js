@@ -1,30 +1,25 @@
 import { useState } from 'react'
 
+import TodoForm from './components/todoForm/TodoForm'
+import TodoList from './components/todoList.jsx/TodoList'
+
 import './App.css'
-
 function App() {
-  const [todo, setTodo] = useState('')
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(todo)
-    setTodo('')
-  }
+  const [todos, setTodos] = useState([])
 
+  const addTodo = (newTodo) => {
+    setTodos((prevState) => [...todos, newTodo])
+  }
   return (
     <div className='App'>
-      <div className='form-container'>
-        <form className='todo-form' onSubmit={handleSubmit}>
-          <div className='form-control'>
-            <input
-              type='text'
-              placeholder='Enter a new todo'
-              onChange={(e) => setTodo(e.target.value)}
-              value={todo}
-            />
-          </div>
-          <button type='submit'>Add</button>
-        </form>
-      </div>
+      <TodoForm addTodo={addTodo} />
+      {todos.length === 0 ? (
+        <p className='todo-message'>
+          Looks like there's nothng todo at the moment...
+        </p>
+      ) : (
+        <TodoList todos={todos} />
+      )}
     </div>
   )
 }
