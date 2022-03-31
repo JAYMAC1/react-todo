@@ -5,7 +5,11 @@ const TodoForm = ({ addTodo }) => {
   const [newTodo, setNewTodo] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
-    addTodo(newTodo)
+    const todo = {
+      id: Math.random(),
+      title: newTodo
+    }
+    addTodo(todo)
     setNewTodo('')
   }
   return (
@@ -20,7 +24,9 @@ const TodoForm = ({ addTodo }) => {
               value={newTodo}
             />
           </div>
-          <button type='submit'>Add</button>
+          <button type='submit' disabled={newTodo.length > 5 ? false : true}>
+            Add
+          </button>
         </form>
       </div>
     </>
