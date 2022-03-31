@@ -5,9 +5,9 @@ import './TodoList.css'
 const TodoList = ({ todos }) => {
   return (
     <div className='todo-container'>
-      <div className='todo-display'>
-        <TodoItem />
-      </div>
+      {todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} />
+      ))}
     </div>
   )
 }
