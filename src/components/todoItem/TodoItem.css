@@ -1,0 +1,15 @@
+
+.todo-item {
+  width: 100%;
+  line-height: 4em;
+  background-color: #69d0cb;
+  border: none;
+  color: #808080;
+  font-size: 1em;
+  outline: none;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 9px 6px 18px -5px rgba(0,0,0,0.68);
+-moz-box-shadow: 9px 6px 18px -5px rgba(0,0,0,0.68);
+box-shadow: 9px 6px 18px -5px rgba(0,0,0,0.68);
+}
