@@ -10,15 +10,22 @@ function App() {
   const addTodo = (newTodo) => {
     setTodos((prevState) => [...todos, newTodo])
   }
+
+  const removeTodo = (id) => {
+    const newTodos = todos.filter((todo) => {
+      return todo.id !== id
+    })
+    setTodos(newTodos)
+  }
   return (
     <div className='App'>
       <TodoForm addTodo={addTodo} />
       {todos.length === 0 ? (
         <p className='todo-message'>
-          Looks like there's nothng todo at the moment...
+          Wow, looks like you've cleared all your ToDo's. Nice work...
         </p>
       ) : (
-        <TodoList todos={todos} />
+        <TodoList todos={todos} removeTodo={removeTodo} />
       )}
     </div>
   )
