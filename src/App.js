@@ -19,6 +19,9 @@ function App() {
   }
   return (
     <div className='App'>
+      <header>
+        <h2>React Todo Project</h2>
+      </header>
       <TodoForm addTodo={addTodo} />
       {todos.length === 0 ? (
         <p className='todo-message'>
