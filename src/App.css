@@ -6,3 +6,11 @@
   text-align: center;
   text-decoration: underline;
 }
+
+header{
+  width: 600px;
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+  color:  #808080;
+}
